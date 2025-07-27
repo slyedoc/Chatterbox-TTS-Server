@@ -134,7 +134,12 @@ python -c "import torch; device = torch.device('cuda' if torch.cuda.is_available
 
 **Problem**: PyTorch 2.6.0 shows warnings about RTX 5090's newer compute capability (sm_120).
 
-**Status**: Operations work but may not be fully optimized. Wait for newer PyTorch versions for full compatibility.
+**Solution**: For full SM_120 support, install PyTorch nightly build:
+```bash
+pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128
+```
+
+**Status**: Operations work but may not be fully optimized with stable PyTorch. Nightly builds provide full SM_120 compatibility.
 
 ## Expected Warnings
 
